@@ -38,8 +38,9 @@ kubectl get storageclasses.storage.k8s.io
 
 ## generate configuration values
 ```
+mkdir configuration-values
 cd tanzu-application-service
-./bin/generate-values.sh -d "tas4k8s.dx-make-it-real.net" > deployment-values.yml
+./bin/generate-values.sh -d "tas4k8s.dx-make-it-real.net" > ../configuration-values/deployment-values.yml
 cd ..
 mkdir configuration-values
 cd tanzu-application-service
