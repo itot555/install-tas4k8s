@@ -94,6 +94,8 @@ cat << YAML >app-registry.yaml
 ## Install TAS4K8s on GKE
 ```
 gcloud container clusters get-credentials demo-tas4k8s --zone asia-northeast1-b
+cd ..
+cd tanzu-application-service/
 ./bin/install-tas.sh ../configuration-values
 ```
 
