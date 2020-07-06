@@ -79,8 +79,6 @@ gcloud iam service-accounts keys create \
 
 ## Creating the Configuration File
 ```
-cd ..
-cd configuration-values
 cat << YAML >app-registry.yaml
  #@data/values
  ---
