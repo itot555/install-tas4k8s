@@ -99,3 +99,31 @@ cd tanzu-application-service/
 ./bin/install-tas.sh ../configuration-values
 ```
 
+## Check Ingress IP Address
+```
+kubectl -n istio-system get service istio-ingressgateway -ojsonpath='{.status.loadBalancer.ingress[0].ip}'
+```
+
+## Register DNS
+
+## cf api
+```
+cf api api.$CF_SYSTEM_DOMAIN --skip-ssl-validation
+```
+
+## check cf admin password
+```
+CF_ADMIN_PASSWORD="$(bosh interpolate configuration-values/deployment-values.yml --path /cf_admin_password)"
+```
+
+## cf auth
+```
+cf auth admin $CF_ADMIN_PASSWORD
+```
+
+## create org/space
+```
+cf create-org test-org
+cf create-space -o test-org test-space
+cf target -o test-org -s test-space
+```
