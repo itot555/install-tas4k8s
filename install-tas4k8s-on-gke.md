@@ -41,14 +41,11 @@ kubectl get storageclasses.storage.k8s.io
 mkdir configuration-values
 cd tanzu-application-service
 ./bin/generate-values.sh -d "tas4k8s.dx-make-it-real.net" > ../configuration-values/deployment-values.yml
-cd ..
-mkdir configuration-values
-cd tanzu-application-service
-mv deployment-values.yml ../configuration-values/
 ```
 
 ## (Optional) Use Load Balancer Service for Ingress Gateway
 ```
+cd ..
 cd configuration-values
 vim load-balancer-values.yml
 ```
